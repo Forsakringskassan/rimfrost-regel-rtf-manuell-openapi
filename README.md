@@ -1,0 +1,1 @@
+# OpenAPI API specifikation för Regel Ratt Till Förskäkring manuell kontroll
