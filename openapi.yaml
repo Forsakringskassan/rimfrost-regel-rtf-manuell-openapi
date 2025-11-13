@@ -2,15 +2,15 @@ openapi: 3.1.0
 info:
   title: Kundbehovsflöde API
   version: 1.1.0
-  description: >
-    OpenAPI specification for Kundbehovsflöden, Kundbehov, Individuals,
-    Uppgifter, and related entities.
+  description: API för att hämta all relevant information för att utföra en manuell rätt till försäkring kontroll
 
 paths:
-  /regel/VAH_RTF_manual/{kundbehov_id}:
+  /regel/RTF_manuell/{kundbehov_id}:
     get:
-      summary: Hämta regelinformation för ett specifikt kundbehov
-      description: Returnerar data som är kopplat till regel VAH_RTF_manual för ett visst kundbehov.
+      tags: [RtfManuellController]
+      operationId: getData
+      summary: Hämta information som behövs för att utföra kontrollen
+      description: Hämta information som behövs för att utföra kontrollen
       parameters:
         - name: kundbehov_id
           in: path
@@ -20,13 +20,13 @@ paths:
             type: integer
       responses:
         "200":
-          description: Lyckad hämtning av regelinformation
+          description: Information hämtad OK
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Kundbehovsflode"
         "404":
-          description: Kundbehovsflöde hittades inte
+          description: Informationen hittades inte
 
 components:
   schemas:
@@ -106,13 +106,13 @@ components:
         individer:
           type: array
           items:
-            $ref: "#/components/schemas/individual"
+            $ref: "#/components/schemas/individ"
       required:
         - id
         - version
         - kundbehovsdatum
 
-    individual:
+    individ:
       type: object
       properties:
         id:
