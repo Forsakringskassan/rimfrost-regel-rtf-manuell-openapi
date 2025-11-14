@@ -17,14 +17,14 @@ paths:
           required: true
           description: ID för kundbehovet
           schema:
-            type: integer
+            type: string
       responses:
         "200":
           description: Information hämtad OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Kundbehovsflode"
+                $ref: "#/components/schemas/kundbehovsflode"
         "404":
           description: Informationen hittades inte
 
@@ -85,7 +85,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         kundbehovsdatum:
@@ -116,7 +117,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         personnummer:
@@ -144,7 +146,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         care_of:
@@ -166,11 +169,13 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         arbetstid:
-          type: integer
+          type: string
+          format: uuid
         anstallningsdag:
           type: string
           format: date
@@ -192,7 +197,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         organisationsnummer:
@@ -209,7 +215,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         from:
@@ -235,7 +242,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         type:
@@ -270,6 +278,7 @@ components:
           format: date
         utforar_id:
           type: string
+          format: uuid
         planerad_till_ts:
           type: string
           format: date
@@ -306,7 +315,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         from:
@@ -345,7 +355,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         arbetstidpercentage:
@@ -366,7 +377,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         personnummer:
@@ -390,7 +402,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         care_of:
@@ -412,7 +425,8 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
+          format: uuid
         version:
           type: string
         organisationsnummer:
