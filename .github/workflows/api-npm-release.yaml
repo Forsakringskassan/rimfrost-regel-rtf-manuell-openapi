@@ -1,7 +1,7 @@
 name: Bundle API Release
 
 on: [workflow_dispatch]
-
+ 
 jobs:
   call-workflow:
     uses: Forsakringskassan/.github/.github/workflows/bundle-api-npm-release.yaml@main
