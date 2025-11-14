@@ -40,10 +40,10 @@ components:
           type: string
         skapad_ts:
           type: string
-          format: date
+          format: date-time
         avslutad_ts:
           type: string
-          format: date
+          format: date-time
         ansvarig_handlaggare:
           type: string
         kundbehovsflodespecifikation:
@@ -275,16 +275,16 @@ components:
           type: string
         skapad_ts:
           type: string
-          format: date
+          format: date-time
         utforar_id:
           type: string
           format: uuid
         planerad_till_ts:
           type: string
-          format: date
+          format: date-time
         utford_ts:
           type: string
-          format: date
+          format: date-time
         uppgift_status:
           type: string
           enum: [NY, PÅBÖRJAD, AVSLUTAD]
