@@ -5,7 +5,7 @@ info:
   description: API för att hämta all relevant information för att utföra en manuell rätt till försäkring kontroll
 
 paths:
-  /regel/rtf-manuell/{kundbehovsflode_id}:
+  /regel/rtf-manuell/{kundbehovsflodeId}:
     get:
       tags: [RtfManuellController]
       operationId: getData
@@ -33,7 +33,7 @@ paths:
       summary: Uppdatera om kunden har rätt till försäkring
       description: Uppdatera om kunden har rätt till försäkring
       parameters:
-        - name: kundbehovsflode_id
+        - name: kundbehovsflodeId
           in: path
           required: true
           description: ID för kundbehovsflödet
