@@ -12,7 +12,7 @@ paths:
       summary: Hämta information som behövs för att utföra kontrollen
       description: Hämta information som behövs för att utföra kontrollen
       parameters:
-        - name: kundbehovsflode_id
+        - name: kundbehovsflodeId
           in: path
           required: true
           description: ID för kundbehovsflödet
