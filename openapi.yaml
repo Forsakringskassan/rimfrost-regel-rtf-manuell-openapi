@@ -1,21 +1,21 @@
 openapi: 3.1.0
 info:
-  title: Kundbehovsflöde API
+  title: RTF Manuell API
   version: 1.1.0
   description: API för att hämta all relevant information för att utföra en manuell rätt till försäkring kontroll
 
 paths:
-  /regel/RTF_manuell/{kundbehov_id}:
+  /regel/rtf-manuell/{kundbehovsflodeId}:
     get:
       tags: [RtfManuellController]
       operationId: getData
       summary: Hämta information som behövs för att utföra kontrollen
       description: Hämta information som behövs för att utföra kontrollen
       parameters:
-        - name: kundbehov_id
+        - name: kundbehovsflodeId
           in: path
           required: true
-          description: ID för kundbehovet
+          description: ID för kundbehovsflödet
           schema:
             type: string
       responses:
@@ -24,105 +24,59 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/kundbehovsflode"
+                $ref: "#/components/schemas/GetDataResponse"
+        "404":
+          description: Informationen hittades inte
+    patch:
+      tags: [RtfManuellController]
+      operationId: updateData
+      summary: Uppdatera om kunden har rätt till försäkring
+      description: Uppdatera om kunden har rätt till försäkring
+      parameters:
+        - name: kundbehovsflodeId
+          in: path
+          required: true
+          description: ID för kundbehovsflödet
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PatchDataRequest"
+      responses:
+        "200":
+          description: Uppdatering genomförd OK
         "404":
           description: Informationen hittades inte
 
 components:
   schemas:
-    kundbehovsflode:
+    GetDataResponse:
       type: object
       properties:
-        id:
+        kundbehovsflode_id:
           type: string
           format: uuid
-        version:
-          type: string
-        skapad_ts:
-          type: string
-          format: date-time
-        avslutad_ts:
-          type: string
-          format: date-time
-        ansvarig_handlaggare:
-          type: string
-        kundbehovsflodespecifikation:
-          $ref: "#/components/schemas/kundbehovsflodespecifikation"
-        kundbehov:
-          $ref: "#/components/schemas/kundbehov"
-        uppgifter:
+        kund:
+          $ref: "#/components/schemas/Kund"
+        ersattning:
           type: array
           items:
-            $ref: "#/components/schemas/uppgift"
-      required:
-        - id
-        - version
-        - skapad_ts
-        - ansvarig_handlaggare
-        - kundbehovsflodespecifikation
-        - kundbehov
+            $ref: "#/components/schemas/Ersattning"
 
-    kundbehovsflodespecifikation:
+    PatchDataRequest:
       type: object
       properties:
-        id:
+        ersattning_id:
           type: string
-          format: uuid
-        version:
-          type: string
-        bpmn_processbeskrivning:
-          type: string
-        namn:
-          type: string
-        beskrivning:
-          type: string
-      required:
-        - id
-        - version
-        - namn
+        beslutsutfall:
+          $ref: "#/components/schemas/Beslutsutfall"
 
-    kundbehov:
+    Kund:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        kundbehovsdatum:
-          type: string
-          format: date
-        kundbehovsstatus:
-          type: string
-        period_start:
-          type: string
-          format: date
-        period_end:
-          type: string
-          format: date
-        avsikt:
-          type: string
-        andringsorsak:
-          type: string
-        individer:
-          type: array
-          items:
-            $ref: "#/components/schemas/individ"
-      required:
-        - id
-        - version
-        - kundbehovsdatum
-
-    individ:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        personnummer:
-          type: string
         efternamn:
           type: string
         fornamn:
@@ -130,311 +84,61 @@ components:
         kon:
           type: string
           enum: [MAN, KVINNA]
-        folkbokforingsadress:
-          $ref: "#/components/schemas/folkbokforingsadress"
         anstallning:
-          $ref: "#/components/schemas/anstallning"
-      required:
-        - id
-        - version
-        - personnummer
-        - efternamn
-        - fornamn
-        - kon
+          $ref: "#/components/schemas/Anstallning"
 
-    folkbokforingsadress:
+    Anstallning:
       type: object
       properties:
-        id:
+        organisationsnummer:
           type: string
-          format: uuid
-        version:
+        organisationsnamn:
           type: string
-        care_of:
-          type: string
-        utdelningsadress:
-          type: string
-        postnummer:
-          type: string
-        postort:
-          type: string
-      required:
-        - id
-        - version
-        - utdelningsadress
-        - postnummer
-        - postort
-
-    anstallning:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        arbetstid:
-          type: string
-          format: uuid
+        arbetstid_procent:
+          type: integer
         anstallningsdag:
           type: string
           format: date
         sista_anstallningsdag:
           type: string
           format: date
-        organisation:
-          $ref: "#/components/schemas/organisation"
         lon:
-          $ref: "#/components/schemas/lon"
-      required:
-        - id
-        - version
-        - arbetstid
-        - anstallningsdag
-        - organisation
+          $ref: "#/components/schemas/Lon"
 
-    organisation:
+    Lon:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        organisationsnummer:
-          type: string
-        organisationsnamn:
-          type: string
-      required:
-        - id
-        - version
-        - organisationsnummer
-        - organisationsnamn
-
-    lon:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        from:
-          type: string
-          format: date
-        to:
-          type: string
-          format: date
-        summa:
+        lonesumma:
           type: integer
-        lonerader:
-          type: array
-          items:
-            $ref: "#/components/schemas/lonerad"
-      required:
-        - id
-        - version
-        - from
-        - to
-        - summa
-
-    lonerad:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        type:
-          type: string
-          enum: [LON, OB, FRANVARO]
-        from:
-          type: string
-          format: date
-        to:
-          type: string
-          format: date
-        belopp:
-          type: integer
-      required:
-        - id
-        - version
-        - type
-        - from
-        - to
-        - belopp
-
-    uppgift:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        skapad_ts:
-          type: string
-          format: date-time
-        utforar_id:
-          type: string
-          format: uuid
-        planerad_till_ts:
-          type: string
-          format: date-time
-        utford_ts:
-          type: string
-          format: date-time
-        uppgift_status:
-          type: string
-          enum: [NY, PÅBÖRJAD, AVSLUTAD]
-        aktivitet:
-          type: string
-        fssa_info:
-          type: string
-        utfall:
-          type: boolean
-        ersattning_underlag:
-          $ref: "#/components/schemas/ersattning_underlag"
-        anstallning_underlag:
-          $ref: "#/components/schemas/anstallning_underlag"
-        organisation_underlag:
-          $ref: "#/components/schemas/organisation_underlag"
-        individ_underlag:
-          $ref: "#/components/schemas/individ_underlag"
-        folkbokforingsadress_underlag:
-          $ref: "#/components/schemas/folkbokforingsadress_underlag"
-      required:
-        - id
-        - version
-        - skapad_ts
-        - uppgift_status
-        - aktivitet
-
-    ersattning_underlag:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
         from:
           type: string
           format: date
         tom:
           type: string
           format: date
-        status:
-          type: string
-        belopp:
-          type: integer
-        berakningsgrund:
-          type: string
-        beloppstyp:
+
+    Ersattning:
+      type: object
+      properties:
+        ersattning_id:
           type: string
         ersattningstyp:
           type: string
-        periodisering:
-          type: string
-          enum: [ENGANG]
-        omfattning:
+        omfattning_procent:
           type: integer
-        avslagsanledning:
-          type: string
-      required:
-        - id
-        - version
-        - from
-        - tom
-        - status
-        - belopp
-        - ersattningstyp
-
-    anstallning_underlag:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        arbetstidpercentage:
+        belopp:
           type: integer
-        anstallningsdag:
+        berakningsgrund:
+          type: integer
+        beslutsutfall:
+          $ref: "#/components/schemas/Beslutsutfall"
+        from:
           type: string
           format: date
-        sista_anstallningsdag:
+        tom:
           type: string
           format: date
-      required:
-        - id
-        - version
-        - arbetstidpercentage
-        - anstallningsdag
 
-    individ_underlag:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        personnummer:
-          type: string
-        efternamn:
-          type: string
-        fornamn:
-          type: string
-        kon:
-          type: string
-          enum: [MAN, KVINNA]
-      required:
-        - id
-        - version
-        - personnummer
-        - efternamn
-        - fornamn
-        - kon
-
-    folkbokforingsadress_underlag:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        care_of:
-          type: string
-        utdelningsadress:
-          type: string
-        postnummer:
-          type: string
-        postort:
-          type: string
-      required:
-        - id
-        - version
-        - utdelningsadress
-        - postnummer
-        - postort
-
-    organisation_underlag:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        version:
-          type: string
-        organisationsnummer:
-          type: string
-        organisationsnamn:
-          type: string
-      required:
-        - id
-        - version
-        - organisationsnummer
-        - organisationsnamn
+    Beslutsutfall:
+      type: string
+      enum: [JA, NEJ, FU]
