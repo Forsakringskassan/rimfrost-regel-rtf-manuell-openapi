@@ -1,3 +1,23 @@
+## 0.1.0 (2025-11-21)
+
+### Features
+
+-  update openapi with patch endpoint ([f8c25](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/f8c25213f02816f) Nils Elveros)  
+
+### Bug Fixes
+
+-  use correct id ([e02da](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/e02da3c8cd32977) Nils Elveros)  
+-  **deps**  update jackson monorepo to v2.20.1 ([aa8ac](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/aa8ac9c40cf99a4) renovate[bot])  
+
+### Other changes
+
+**Update openapi.yaml**
+
+* Co-authored-by: Ulf Slunga &lt;98820233+UlfSlunga-Sinetiq@users.noreply.github.com&gt; 
+
+[495ce](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/495ce9b0b1e1fb8) NilsElveros *2025-11-21 09:31:01*
+
+
 ## 0.0.1 (2025-11-14)
 
 ### Bug Fixes
