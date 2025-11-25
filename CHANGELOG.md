@@ -1,3 +1,13 @@
+## 0.1.1 (2025-11-25)
+
+### Bug Fixes
+
+-  format as uuid ([5cb4b](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/5cb4b49c333d8e0) Nils Elveros)  
+-  **deps**  update dependency se.fk.gradle:gradle-conventions to v1.18.1 ([6e675](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/6e675449bacda10) renovate[bot])  
+
+### Dependency updates
+
+- update gradle to v9.2.1 ([0bd18](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/0bd189599ddb13c) renovate[bot])  
 ## 0.1.0 (2025-11-21)
 
 ### Features
