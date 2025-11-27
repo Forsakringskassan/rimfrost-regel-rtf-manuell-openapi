@@ -1,3 +1,9 @@
+## 0.1.2 (2025-11-27)
+
+### Bug Fixes
+
+-  add missing property avslagsanledning (#7) ([42094](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/420948a2fefe37d) NilsElveros)  
+
 ## 0.1.1 (2025-11-25)
 
 ### Bug Fixes
