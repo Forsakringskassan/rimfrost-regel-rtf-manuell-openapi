@@ -74,6 +74,9 @@ components:
         ersattning_id:
           type: string
           format: uuid
+        avslagsanledning:
+          type: string
+          nullable: true
         beslutsutfall:
           $ref: "#/components/schemas/Beslutsutfall"
 
@@ -136,6 +139,9 @@ components:
           type: integer
         beslutsutfall:
           $ref: "#/components/schemas/Beslutsutfall"
+        avslagsanledning:
+          type: string
+          nullable: true
         from:
           type: string
           format: date
