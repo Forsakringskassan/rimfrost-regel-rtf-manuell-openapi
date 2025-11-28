@@ -1,3 +1,17 @@
+## 0.1.3 (2025-11-28)
+
+### Bug Fixes
+
+-  add signera to patch request (#8) ([80738](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/80738fadcb796af) NilsElveros)  
+
+### Other changes
+
+**Update version to 0.1.3 (#9)**
+
+
+[29084](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/290848c7c1230f2) NilsElveros *2025-11-28 09:40:22*
+
+
 ## 0.1.2 (2025-11-27)
 
 ### Bug Fixes
