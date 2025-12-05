@@ -1,3 +1,9 @@
+## 0.1.4 (2025-12-05)
+
+### Bug Fixes
+
+-  more specific group so we don't get same path as other openapi spec. (#10) ([c4b6f](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/c4b6f6aaaab0c96) NilsElveros)  
+
 ## 0.1.3 (2025-11-28)
 
 ### Bug Fixes
