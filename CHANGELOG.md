@@ -1,3 +1,9 @@
+## 0.1.5 (2025-12-19)
+
+### Bug Fixes
+
+-  dela upp path i servers + path ([c56f3](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/c56f39d5d4b1f0d) Ulf Slunga)  
+
 ## 0.1.4 (2025-12-05)
 
 ### Bug Fixes
