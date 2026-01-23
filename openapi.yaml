@@ -4,7 +4,6 @@ info:
   version: 1.1.0
   description: API för att hämta all relevant information för att utföra en manuell rätt till försäkring kontroll
 
-
 servers:
   - url: /regel/rtf-manuell
 
@@ -32,11 +31,12 @@ paths:
                 $ref: "#/components/schemas/GetDataResponse"
         "404":
           description: Informationen hittades inte
+  /{kundbehovsflodeId}/update:
     patch:
       tags: [RtfManuellController]
       operationId: updateData
-      summary: Uppdatera om kunden har rätt till försäkring
-      description: Uppdatera om kunden har rätt till försäkring
+      summary: Uppdatera information om kundbehovet
+      description: Uppdatera information om kundbehovet
       parameters:
         - name: kundbehovsflodeId
           in: path
@@ -78,14 +78,6 @@ components:
         ersattning_id:
           type: string
           format: uuid
-        avslagsanledning:
-          type: string
-          nullable: true
-        signera:
-          type: boolean
-          default: false
-        beslutsutfall:
-          $ref: "#/components/schemas/Beslutsutfall"
 
     Kund:
       type: object
