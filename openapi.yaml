@@ -62,7 +62,7 @@ components:
     GetDataResponse:
       type: object
       properties:
-        kundbehovsflode_id:
+        kundbehovsflodeId:
           type: string
           format: uuid
         kund:
@@ -75,7 +75,7 @@ components:
     PatchDataRequest:
       type: object
       properties:
-        ersattning_id:
+        ersattningId:
           type: string
           format: uuid
 
@@ -99,12 +99,12 @@ components:
           type: string
         organisationsnamn:
           type: string
-        arbetstid_procent:
+        arbetstidProcent:
           type: integer
         anstallningsdag:
           type: string
           format: date
-        sista_anstallningsdag:
+        sistaAnstallningsdag:
           type: string
           format: date
         lon:
@@ -125,12 +125,12 @@ components:
     Ersattning:
       type: object
       properties:
-        ersattning_id:
+        ersattningId:
           type: string
           format: uuid
         ersattningstyp:
           type: string
-        omfattning_procent:
+        omfattningProcent:
           type: integer
         belopp:
           type: integer
