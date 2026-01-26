@@ -1,3 +1,9 @@
+## 0.2.1 (2026-01-26)
+
+### Bug Fixes
+
+-  Restore beslutsutfall and avslagsanledning to patch endpoint ([e256e](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/e256eebde81de8c) Lars Persson)  
+
 ## 0.2.0 (2026-01-26)
 
 ### Bug Fixes
