@@ -31,12 +31,12 @@ paths:
                 $ref: "#/components/schemas/GetDataResponse"
         "404":
           description: Informationen hittades inte
-  /{kundbehovsflodeId}/update:
+  /{kundbehovsflodeId}/ersattning/{ersattningId}:
     patch:
       tags: [RtfManuellController]
-      operationId: updateData
-      summary: Uppdatera information om kundbehovet
-      description: Uppdatera information om kundbehovet
+      operationId: updateErsattning
+      summary: Uppdatera information om ersättning
+      description: Uppdatera information om ersättning
       parameters:
         - name: kundbehovsflodeId
           in: path
@@ -45,12 +45,19 @@ paths:
           schema:
             type: string
             format: uuid
+        - name: ersattningId
+          in: path
+          required: true
+          description: ID för ersättning
+          schema:
+            type: string
+            format: uuid
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/PatchDataRequest"
+              $ref: "#/components/schemas/PatchErsattningRequest"
       responses:
         "200":
           description: Uppdatering genomförd OK
@@ -72,12 +79,13 @@ components:
           items:
             $ref: "#/components/schemas/Ersattning"
 
-    PatchDataRequest:
+    PatchErsattningRequest:
       type: object
       properties:
-        ersattning_id:
+        avslagsanledning:
           type: string
-          format: uuid
+        beslutsutfall:
+          $ref: "#/components/schemas/Beslutsutfall"
 
     Kund:
       type: object
