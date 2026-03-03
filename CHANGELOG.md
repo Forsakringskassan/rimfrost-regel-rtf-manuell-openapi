@@ -1,3 +1,14 @@
+## 0.2.2 (2026-03-03)
+
+### Bug Fixes
+
+-  renaming handlaggning ([27737](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/277375c1359f8fd) Ulf Slunga)  
+-  renaming handlaggning ([58fef](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/58fef5d013dcd29) Ulf Slunga)  
+-  removing NPM_TOKEN ([a86ad](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/a86ade43642521a) Tomas Bjerre)  
+
+### Dependency updates
+
+- update gradle to v9.3.1 ([bba1b](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/bba1b3a096bc89b) renovate[bot])  
 ## 0.3.0 (2026-03-03)
 
 ### Features
