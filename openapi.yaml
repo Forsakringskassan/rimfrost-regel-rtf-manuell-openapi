@@ -18,7 +18,7 @@ paths:
         - name: handlaggningId
           in: path
           required: true
-          description: ID för handläggningen
+          description: ID för handläggningsärendet
           schema:
             type: string
             format: uuid
@@ -41,7 +41,7 @@ paths:
         - name: handlaggningId
           in: path
           required: true
-          description: ID för handläggningen
+          description: ID för handläggningsärendet
           schema:
             type: string
             format: uuid
