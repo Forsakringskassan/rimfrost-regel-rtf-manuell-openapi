@@ -8,17 +8,17 @@ servers:
   - url: /regel/rtf-manuell
 
 paths:
-  /{kundbehovsflodeId}:
+  /{handlaggningId}:
     get:
       tags: [RtfManuellController]
       operationId: getData
       summary: Hämta information som behövs för att utföra kontrollen
       description: Hämta information som behövs för att utföra kontrollen
       parameters:
-        - name: kundbehovsflodeId
+        - name: handlaggningId
           in: path
           required: true
-          description: ID för kundbehovsflödet
+          description: ID för handläggningen
           schema:
             type: string
             format: uuid
@@ -31,17 +31,17 @@ paths:
                 $ref: "#/components/schemas/GetDataResponse"
         "404":
           description: Informationen hittades inte
-  /{kundbehovsflodeId}/ersattning/{ersattningId}:
+  /{handlaggningId}/ersattning/{ersattningId}:
     patch:
       tags: [RtfManuellController]
       operationId: updateErsattning
       summary: Uppdatera information om ersättning
       description: Uppdatera information om ersättning
       parameters:
-        - name: kundbehovsflodeId
+        - name: handlaggningId
           in: path
           required: true
-          description: ID för kundbehovsflödet
+          description: ID för handläggningen
           schema:
             type: string
             format: uuid
@@ -69,7 +69,7 @@ components:
     GetDataResponse:
       type: object
       properties:
-        kundbehovsflode_id:
+        handlaggning_id:
           type: string
           format: uuid
         kund:
