@@ -10,8 +10,6 @@ servers:
 paths:
   /{handlaggningId}:
     get:
-      tags: [RtfManuellController]
-      operationId: getData
       summary: Hämta information som behövs för att utföra kontrollen
       description: Hämta information som behövs för att utföra kontrollen
       parameters:
@@ -32,8 +30,6 @@ paths:
         "404":
           description: Informationen hittades inte
     patch:
-      tags: [RtfManuellController]
-      operationId: patch
       summary: Uppdatera information om ersättning
       description: Uppdatera information om ersättning
       parameters:
@@ -66,7 +62,7 @@ components:
           format: uuid
         kund:
           $ref: "#/components/schemas/Kund"
-        ersattning:
+        ersattningar:
           type: array
           items:
             $ref: "#/components/schemas/Ersattning"
