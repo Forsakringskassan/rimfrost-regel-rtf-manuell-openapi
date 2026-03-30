@@ -10,8 +10,6 @@ servers:
 paths:
   /{handlaggningId}:
     get:
-      tags: [RtfManuellController]
-      operationId: getData
       summary: Hämta information som behövs för att utföra kontrollen
       description: Hämta information som behövs för att utföra kontrollen
       parameters:
@@ -31,10 +29,7 @@ paths:
                 $ref: "#/components/schemas/GetDataResponse"
         "404":
           description: Informationen hittades inte
-  /{handlaggningId}/ersattning/{ersattningId}:
     patch:
-      tags: [RtfManuellController]
-      operationId: updateErsattning
       summary: Uppdatera information om ersättning
       description: Uppdatera information om ersättning
       parameters:
@@ -42,13 +37,6 @@ paths:
           in: path
           required: true
           description: ID för handläggningsärendet
-          schema:
-            type: string
-            format: uuid
-        - name: ersattningId
-          in: path
-          required: true
-          description: ID för ersättning
           schema:
             type: string
             format: uuid
@@ -74,7 +62,7 @@ components:
           format: uuid
         kund:
           $ref: "#/components/schemas/Kund"
-        ersattning:
+        ersattningar:
           type: array
           items:
             $ref: "#/components/schemas/Ersattning"
@@ -82,10 +70,13 @@ components:
     PatchErsattningRequest:
       type: object
       properties:
-        avslagsanledning:
+        ersattningId:
           type: string
-        beslutsutfall:
-          $ref: "#/components/schemas/Beslutsutfall"
+          format: uuid
+        ersattningar:
+          type: array
+          items:
+            $ref: "#/components/schemas/UpdateErsattning"
 
     Kund:
       type: object
@@ -115,20 +106,6 @@ components:
         sista_anstallningsdag:
           type: string
           format: date
-        lon:
-          $ref: "#/components/schemas/Lon"
-
-    Lon:
-      type: object
-      properties:
-        lonesumma:
-          type: integer
-        from:
-          type: string
-          format: date
-        tom:
-          type: string
-          format: date
 
     Ersattning:
       type: object
@@ -155,6 +132,14 @@ components:
         tom:
           type: string
           format: date
+
+    UpdateErsattning:
+      type: object
+      properties:
+        avslagsanledning:
+          type: string
+        beslutsutfall:
+          $ref: "#/components/schemas/Beslutsutfall"
 
     Beslutsutfall:
       type: string
