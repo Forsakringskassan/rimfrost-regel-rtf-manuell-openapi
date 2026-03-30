@@ -137,9 +137,9 @@ components:
       type: object
       properties:
         avslagsanledning:
-        type: string
-      beslutsutfall:
-        $ref: "#/components/schemas/Beslutsutfall"
+          type: string
+        beslutsutfall:
+          $ref: "#/components/schemas/Beslutsutfall"
 
     Beslutsutfall:
       type: string
