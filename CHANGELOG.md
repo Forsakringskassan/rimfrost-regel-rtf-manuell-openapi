@@ -1,3 +1,13 @@
+## 0.2.3 (2026-03-30)
+
+### Bug Fixes
+
+-  remove Lon and make patch take a list of ersattningar (#17) ([e9081](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/e9081c60b3650c8) NilsElveros)  
+-  **deps**  update jackson monorepo to v2.21.1 ([a4d69](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/a4d69dbebb977ac) renovate[bot])  
+
+### Dependency updates
+
+- update gradle to v9.4.0 ([3f5ef](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/3f5efe713854130) renovate[bot])  
 ## 0.2.2 (2026-03-03)
 
 ### Bug Fixes
