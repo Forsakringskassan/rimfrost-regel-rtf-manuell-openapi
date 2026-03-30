@@ -1,3 +1,9 @@
+## 0.2.4 (2026-03-30)
+
+### Bug Fixes
+
+-  UpdeateErsattning now has ersattningId (#19) ([cf52a](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/cf52a0f3b2ee0ab) NilsElveros)  
+
 ## 0.2.3 (2026-03-30)
 
 ### Bug Fixes
