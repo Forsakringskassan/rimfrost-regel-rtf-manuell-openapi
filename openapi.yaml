@@ -70,9 +70,6 @@ components:
     PatchErsattningRequest:
       type: object
       properties:
-        ersattningId:
-          type: string
-          format: uuid
         ersattningar:
           type: array
           items:
@@ -136,6 +133,9 @@ components:
     UpdateErsattning:
       type: object
       properties:
+        ersattningId:
+          type: string
+          format: uuid
         avslagsanledning:
           type: string
         beslutsutfall:
