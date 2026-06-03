@@ -1,3 +1,13 @@
+## 1.0.1 (2026-06-03)
+
+### Bug Fixes
+
+-  **deps**  update jackson monorepo to v2.21.3 ([ed939](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/ed939d949f75390) renovate[bot])  
+
+### Dependency updates
+
+- update gradle to v9.5.1 ([d9b2d](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/d9b2d66c094f7d5) renovate[bot])  
+- update gradle to v9.5.0 ([e6f44](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/e6f441d232f22de) renovate[bot])  
 ## 1.0.0 (2026-04-28)
 
 ### Breaking changes
