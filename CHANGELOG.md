@@ -1,3 +1,12 @@
+## 1.1.1 (2026-06-26)
+
+### Bug Fixes
+
+-  Remove server url as it causes interference with endpoint paths ([f5d38](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/f5d38eac13d9000) Lars Persson)  
+-  **deps**  update dependency se.fk.gradle:gradle-conventions to v1.18.3 ([26024](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/260244d60178a5f) renovate[bot])  
+-  **deps**  update jackson monorepo ([593a5](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/593a59485877ee6) renovate[bot])  
+-  **deps**  update dependency se.fk.gradle:gradle-conventions to v1.18.2 ([74735](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/747358911fdd83b) renovate[bot])  
+
 ## 1.0.1 (2026-06-03)
 
 ### Bug Fixes
