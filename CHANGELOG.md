@@ -1,3 +1,9 @@
+## 1.1.2 (2026-06-26)
+
+### Bug Fixes
+
+-  Add required for fields that should be set ([f51fd](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/f51fdd19b3b3f82) Lars Persson)  
+
 ## 1.1.1 (2026-06-26)
 
 ### Bug Fixes
