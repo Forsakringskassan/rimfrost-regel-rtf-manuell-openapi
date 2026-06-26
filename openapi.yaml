@@ -63,6 +63,10 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/Ersattning"
+      required:
+        - handlaggning_id
+        - kund
+        - ersattningar
 
     PatchErsattningRequest:
       type: object
@@ -71,6 +75,8 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/UpdateErsattning"
+      required:
+        - ersattningar
 
     Kund:
       type: object
@@ -126,6 +132,14 @@ components:
         tom:
           type: string
           format: date
+      required:
+        - ersattning_id
+        - ersattningstyp
+        - omfattning_procent
+        - belopp
+        - berakningsgrund
+        - from
+        - tom
 
     UpdateErsattning:
       type: object
@@ -137,6 +151,9 @@ components:
           type: string
         beslutsutfall:
           $ref: "#/components/schemas/Beslutsutfall"
+      required:
+        - ersattningId
+        - beslutsutfall
 
     Beslutsutfall:
       type: string
