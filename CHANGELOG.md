@@ -1,3 +1,18 @@
+## 1.2.0 (2026-08-25)
+
+### Features
+
+-  remove komplettering/done endpoint, already defined in framework spec ([41191](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/411913bb6e2051e) Ulf Slunga)  
+-  add komplettering endpoints with full response code coverage ([94bb6](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/94bb6a807191a45) Ulf Slunga)  
+
+### Bug Fixes
+
+-  **deps**  update jackson monorepo to v2.22.1 ([e09ac](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/e09accb8495fc51) renovate[bot])  
+-  Replace npm workflows with gradle workflows ([8dca4](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/8dca4df7da66643) Lars Persson)  
+
+### Dependency updates
+
+- update gradle to v9.6.1 ([68257](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-openapi/commit/68257a6695402b6) renovate[bot])  
 ## 1.1.2 (2026-06-26)
 
 ### Bug Fixes
