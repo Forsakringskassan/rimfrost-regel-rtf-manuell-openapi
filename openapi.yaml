@@ -101,28 +101,6 @@ paths:
         "503":
           description: Tjänsten är inte tillgänglig
 
-  /{handlaggningId}/komplettering/done:
-    post:
-      summary: Avsluta komplettering
-      description: Markera kompletteringen som genomförd
-      parameters:
-        - $ref: "#/components/parameters/HandlaggningId"
-      responses:
-        "204":
-          description: Komplettering avslutad OK
-        "207":
-          description: Komplettering registrerad men avslut av operativ uppgift misslyckades
-        "400":
-          description: Ogiltig begäran
-        "403":
-          description: Åtkomst nekad
-        "404":
-          description: Ärendet hittades inte
-        "500":
-          description: Internt serverfel
-        "503":
-          description: Tjänsten är inte tillgänglig
-
 components:
   parameters:
     HandlaggningId:
